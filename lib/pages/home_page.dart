@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Informacion general",
+                "Información general",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -39,10 +39,27 @@ class HomePage extends StatelessWidget {
                 title: Text("Años de Experiencia: "),
               ),
               Divider(),
-              Center(
-                child: Text(
-                  "Poderes",
-                ),
+              Text(
+                "Poderes",
+                style: TextStyle(fontSize: 20),
+              ),
+              ListTile(
+                title: Text("Poder 1"),
+              ),
+              ListTile(
+                title: Text("Poder 2"),
+              ),
+              ListTile(
+                title: Text("Poder 2"),
+              ),
+              ListTile(
+                title: Text("Poder 3"),
+              ),
+              ListTile(
+                title: Text("Poder 4"),
+              ),
+              ListTile(
+                title: Text("Poder 5"),
               ),
             ],
           ),
