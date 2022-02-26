@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_codigo4_state/pages/counter_page.dart';
 import 'package:flutter_codigo4_state/pages/home_page.dart';
 import 'package:flutter_codigo4_state/providers/superheroe_provider.dart';
 import 'package:provider/provider.dart';

@@ -10,4 +10,6 @@ class SuperheroProvider with ChangeNotifier {
     _superheroe = superheroe;
     notifyListeners();
   }
+
+  bool get checkSuperhero => _superheroe != null;
 }
