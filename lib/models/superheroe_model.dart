@@ -1,11 +1,11 @@
 class Superheroe {
   String name;
-  int experiencia;
+  int experience;
   List<String> powers;
 
   Superheroe({
     required this.name,
-    required this.experiencia,
+    required this.experience,
     required this.powers,
   });
 }
