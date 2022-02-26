@@ -43,7 +43,9 @@ class RegisterPage extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                _superheroProvider.updateExperience(10000);
+              },
               child: Text(
                 "Actualizar la experiencia",
                 style: TextStyle(
@@ -56,6 +58,18 @@ class RegisterPage extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 "Añadir Poderes",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              color: Colors.deepPurpleAccent,
+            ),
+            MaterialButton(
+              onPressed: () {
+                _superheroProvider.deleteSuperhero();
+              },
+              child: Text(
+                "Eliminar Superheroe",
                 style: TextStyle(
                   color: Colors.white,
                 ),

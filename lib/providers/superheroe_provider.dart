@@ -11,5 +11,15 @@ class SuperheroProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  updateExperience(int experience) {
+    _superheroe!.experiencia = experience;
+    notifyListeners();
+  }
+
+  deleteSuperhero() {
+    _superheroe = null;
+    notifyListeners();
+  }
+
   bool get checkSuperhero => _superheroe != null;
 }
