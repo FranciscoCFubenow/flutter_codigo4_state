@@ -55,7 +55,9 @@ class RegisterPage extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                _superheroProvider.addPower();
+              },
               child: Text(
                 "Añadir Poderes",
                 style: TextStyle(
