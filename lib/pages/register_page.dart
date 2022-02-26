@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo4_state/models/superheroe_model.dart';
+import 'package:flutter_codigo4_state/services/superheroe_service.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -8,13 +10,35 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent,
-        title: Text("Registrar"),
+        title: StreamBuilder(
+          stream: SuperheroeService().superheroeStream,
+          builder: (BuildContext context, AsyncSnapshot snap) {
+            if (snap.hasData) {
+              Superheroe superheroe = snap.data;
+              return Text("Registrar::: ${superheroe.name}");
+            }
+            return Text("Registrar");
+          },
+        ),
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Superheroe batman = Superheroe(
+                  name: "Batman",
+                  experiencia: 20,
+                  powers: [
+                    "Inteligencia",
+                    "Artes Marciales",
+                    "Millonario",
+                  ],
+                );
+                SuperheroeService().createSuperhero(batman);
+                // superheroeService.createSuperhero(batman);
+              },
               child: Text(
                 "Añadir superheroe",
                 style: TextStyle(
@@ -24,7 +48,9 @@ class RegisterPage extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                SuperheroeService().updateExperience(100);
+              },
               child: Text(
                 "Actualizar la experiencia",
                 style: TextStyle(
@@ -34,7 +60,9 @@ class RegisterPage extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                SuperheroeService().addPower("X-Ray Vision");
+              },
               child: Text(
                 "Añadir poderes",
                 style: TextStyle(
