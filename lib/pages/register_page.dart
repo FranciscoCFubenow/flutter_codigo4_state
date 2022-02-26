@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_codigo4_state/cubit/superheroe/superheroe_cubit.dart';
+import 'package:flutter_codigo4_state/models/superheroe_model.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -15,7 +18,16 @@ class RegisterPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Superheroe superheroe = Superheroe(
+                  name: "Batman",
+                  experience: 2,
+                  powers: [
+                    "Es rico",
+                  ],
+                );
+                context.read<SuperheroeCubit>().createSuperheroe(superheroe);
+              },
               child: Text(
                 "Añadir superheroe",
                 style: TextStyle(
@@ -25,7 +37,9 @@ class RegisterPage extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<SuperheroeCubit>().updateExperience(100);
+              },
               child: Text(
                 "Actualizar la experiencia",
                 style: TextStyle(
