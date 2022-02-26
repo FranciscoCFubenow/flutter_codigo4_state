@@ -49,7 +49,7 @@ class RegisterPage extends StatelessWidget {
             ),
             MaterialButton(
               onPressed: () {
-                SuperheroeService().updateExperience(100);
+                SuperheroeService().updateExperience(110);
               },
               child: Text(
                 "Actualizar la experiencia",
