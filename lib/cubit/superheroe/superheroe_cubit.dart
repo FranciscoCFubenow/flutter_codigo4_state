@@ -19,8 +19,12 @@ class SuperheroeCubit extends Cubit<SuperheroeState> {
   void updateExperience(int experience) {
     final currentState = state;
     if (currentState is SuperheroeCreate) {
-      currentState.superheroe.experience = experience;
-      emit(SuperheroeCreate(superheroe: currentState.superheroe));
+      // currentState.superheroe.experience = experience;
+      // emit(SuperheroeCreate(superheroe: currentState.superheroe));
+      final Superheroe newSuperheroe =
+          currentState.superheroe.copyWith(newExperience: 10000);
+      // print(currentState.superheroe.experience);
+      emit(SuperheroeCreate(superheroe: newSuperheroe));
     }
   }
 
