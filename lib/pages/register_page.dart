@@ -60,6 +60,18 @@ class RegisterPage extends StatelessWidget {
               ),
               color: Colors.deepPurpleAccent,
             ),
+            MaterialButton(
+              onPressed: () {
+                context.read<SuperheroeCubit>().deleteSuperheroe();
+              },
+              child: Text(
+                "Eliminar superheroe",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              color: Colors.deepPurpleAccent,
+            ),
           ],
         ),
       ),

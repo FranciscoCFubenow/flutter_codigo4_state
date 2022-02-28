@@ -29,6 +29,9 @@ class SuperheroeCubit extends Cubit<SuperheroeState> {
   }
 
   // Eliminar superheroe
+  void deleteSuperheroe() {
+    emit(SuperheroeInit());
+  }
 
   // Agregar poderes
   void addPower() {
