@@ -3,7 +3,7 @@ part of 'calculator_bloc.dart';
 @immutable
 abstract class CalculatorEvent {}
 
-//Definir los eventos a utilizar
+//Definir los eventos a utilizarr
 
 class AddNumber1 extends CalculatorEvent {
   int number1;

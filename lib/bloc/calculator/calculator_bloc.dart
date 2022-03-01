@@ -10,7 +10,6 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     on<AddNumber1>(
       (event, emit) {
         emit(state.copyWith(number1: state.number1 + 1));
-        // emit(CalculatorState())
       },
     );
 
