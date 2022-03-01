@@ -8,6 +8,9 @@ class SuperheroeCreateEvent extends SuperheroeEvent {
   SuperheroeCreateEvent({required this.superheroe});
 }
 
-class SuperheroeUpdateExperienceEvent extends SuperheroeEvent {}
+class SuperheroeUpdateExperienceEvent extends SuperheroeEvent {
+  final int experience;
+  SuperheroeUpdateExperienceEvent({required this.experience});
+}
 
 class SuperheroeAddPowerEvent extends SuperheroeEvent {}

@@ -11,11 +11,11 @@ class SuperheroeBloc extends Bloc<SuperheroeEvent, SuperheroeState> {
   SuperheroeBloc() : super(SuperheroeState()) {
     on<SuperheroeCreateEvent>((event, emit) {
       emit(SuperheroeState(superheroe: event.superheroe));
-      // TODO: implement event handler
     });
 
     on<SuperheroeUpdateExperienceEvent>((event, emit) {
-      // TODO: implement event handler
+      emit(SuperheroeState(
+          superheroe: state.superheroe!.copyWith(exp: event.experience)));
     });
 
     on<SuperheroeAddPowerEvent>((event, emit) {

@@ -39,7 +39,10 @@ class RegisterPage extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                BlocProvider.of<SuperheroeBloc>(context)
+                    .add(SuperheroeUpdateExperienceEvent(experience: 10000));
+              },
               child: Text(
                 "Actualizar la experiencia",
                 style: TextStyle(
