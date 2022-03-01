@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => CalculatorBloc()),
       ],
       child: MaterialApp(
-        title: 'Flutter Superhero',
+        title: 'Flutter Superheroe',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
