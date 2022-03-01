@@ -19,7 +19,23 @@ class SuperheroeBloc extends Bloc<SuperheroeEvent, SuperheroeState> {
     });
 
     on<SuperheroeAddPowerEvent>((event, emit) {
-      // TODO: implement event handler
+      // List<String> newPowers = state.superheroe!.powers;
+      // newPowers.add(event.power);
+      // emit(SuperheroeState(
+      //      superheroe: state.superheroe!.copyWith(powers: newPowers)));
+
+      // o intentar
+
+      emit(SuperheroeState(
+          superheroe: state.superheroe!.copyWith(
+        powers: [...state.superheroe!.powers, event.power],
+      )));
     });
+
+    on<SuperheroeDeleteEvent>(
+      (event, emit) {
+        emit(SuperheroeState());
+      },
+    );
   }
 }

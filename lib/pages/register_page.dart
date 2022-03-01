@@ -52,9 +52,25 @@ class RegisterPage extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                BlocProvider.of<SuperheroeBloc>(context)
+                    .add(SuperheroeAddPowerEvent(power: "Artes Marciales"));
+              },
               child: Text(
                 "Añadir Poderes",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              color: Colors.deepPurpleAccent,
+            ),
+            MaterialButton(
+              onPressed: () {
+                BlocProvider.of<SuperheroeBloc>(context)
+                    .add(SuperheroeDeleteEvent());
+              },
+              child: Text(
+                "Eliminar",
                 style: TextStyle(
                   color: Colors.white,
                 ),
