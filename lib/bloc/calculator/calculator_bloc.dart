@@ -30,7 +30,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
 
     on<Reset>(
       (event, emit) {
-        emit(state.copyWith(number1: 0, number2: 0, result: 0));
+        emit(CalculatorState());
         // emit(CalculatorState())
       },
     );

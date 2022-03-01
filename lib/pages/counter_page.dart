@@ -40,7 +40,6 @@ class CounterPage extends StatelessWidget {
                     onPressed: () {
                       BlocProvider.of<CalculatorBloc>(context)
                           .add(AddNumber1(number1: 1));
-                      print("numero1: ${state.number1}");
                     },
                   ),
                 ],
@@ -69,7 +68,6 @@ class CounterPage extends StatelessWidget {
                     onPressed: () {
                       BlocProvider.of<CalculatorBloc>(context)
                           .add(AddNumber2(number2: 1));
-                      print("numero2: ${state.number2}");
                     },
                   ),
                 ],
@@ -91,9 +89,8 @@ class CounterPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  BlocProvider.of<CalculatorBloc>(context).add(
-                      CalculateResult(result: state.number1 + state.number2));
-                  print("resultado: ${state.result}");
+                  BlocProvider.of<CalculatorBloc>(context)
+                      .add(CalculateResult());
                 },
               ),
               MaterialButton(
@@ -105,9 +102,7 @@ class CounterPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  BlocProvider.of<CalculatorBloc>(context)
-                      .add(Reset(number1: 0, number2: 0, result: 0));
-                  print("resultado: ${state.result}");
+                  BlocProvider.of<CalculatorBloc>(context).add(Reset());
                 },
               ),
             ],

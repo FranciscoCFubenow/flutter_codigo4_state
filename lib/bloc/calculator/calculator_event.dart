@@ -15,16 +15,8 @@ class AddNumber2 extends CalculatorEvent {
   AddNumber2({required this.number2});
 }
 
-class CalculateResult extends CalculatorEvent {
-  int result;
-  CalculateResult({required this.result});
-}
+class CalculateResult extends CalculatorEvent {}
 
-class Reset extends CalculatorEvent {
-  int number1;
-  int number2;
-  int result;
-  Reset({required this.number1, required this.number2, required this.result});
-}
+class Reset extends CalculatorEvent {}
 
 class EventoPrueba extends CalculatorEvent {}
